@@ -10,7 +10,7 @@ int main()
     int i, ind_open_bracket = 0, ind_close_bracket = 0, ind_last_num_elm = 0,
            ind_first_num_elm = 0, ind_second_num_elm = 0;
     int l = 0, c = 0, e = 0, error = 0;
-
+int newflag=0;
     while (1) {
         e = fgetc(file);
         if (e == EOF) {
@@ -65,8 +65,20 @@ int main()
                 break;
             }
         }
+	for(i=ind_first_num_elm+2;i<20;i++){
+		if(a[i]=='.'){
+			if(newflag==0){
+				newflag=1;
 
+				}
+			else{
+				printf("Error at column %d",a[i]-32);
+				error=1;
+				printf("\n");
+				break; 
+				}}}
         for (i = ind_first_num_elm + 2; a[i] != ','; i++) {
+	    
             if (error == 0) {
                 if (a[i] == ')') {
                     error = 1;
