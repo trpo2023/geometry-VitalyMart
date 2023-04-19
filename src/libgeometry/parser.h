@@ -8,7 +8,7 @@ typedef struct Point {
     double y;
 } point;
 
-float pcircle(point center, double rad);
-float acircle(point center, double rad);
+float pcircle(float rad);
+float acircle(float rad);
 void Exception(char* string);
 void parse_start();

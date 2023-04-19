@@ -1,12 +1,12 @@
 #include <libgeometry/parser.h>
 #define M_PI 3.14
 
-float pcircle(point center, double rad)
+float pcircle(float rad)
 {
     return 2 * M_PI * rad;
 }
 
-float acircle(point center, double rad)
+float acircle(float rad)
 {
     return M_PI * rad * rad;
 }
@@ -60,9 +60,7 @@ void parse_start()
             if (rad < 0) {
                 puts("Radius cannot be negative\n");
             }
-            printf("Perimetr: %.3f, Area: %.3f\n",
-                   pcircle(a, rad),
-                   acircle(a, rad));
+            printf("Perimetr: %.3f, Area: %.3f\n", pcircle(rad), acircle(rad));
         } else {
             if (strcmp(string, "q")) {
                 printf("Error at column 0: expected 'circle', 'triangle' or "
